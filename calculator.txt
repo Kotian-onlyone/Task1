@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+    char op;
+    double firstnumber,secondnumber, total;
+    printf("ENTER AN OPERATOR (+, -, *, /): ");
+    scanf("%c", &op);
+  printf("ENTER TWO NUMBERS: ");
+    scanf("%lf %lf",&firstnumber,&secondnumber);
+    switch (op) {
+        case '+':
+            total = firstnumber+secondnumber;
+            break;
+        case '-':
+              total = firstnumber-secondnumber;
+            break;
+        case '*':
+              total = firstnumber*secondnumber;
+            break;
+        case '/':
+            if (secondnumber != 0)
+            {
+                  total = firstnumber/secondnumber;
+            }
+         else
+             {
+                printf("Error: Division by zero\n");
+                return 1; 
+            }
+            break;
+        default:
+            printf("Error: Invalid operator\n");
+            return 1; 
+    }
+   printf("Total: %.2lf\n", total);
+ return 0;
+}
